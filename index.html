@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encyclopedia of Ancient Egypt</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#landing" class="logo" aria-label="Go to home page">
+        <!-- Anubis icon SVG -->
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <ellipse cx="30" cy="22" rx="10" ry="14" fill="#1a1a1a" />
+          <polygon points="20,14 14,4 22,12" fill="#1a1a1a" />
+          <polygon points="40,14 46,4 38,12" fill="#1a1a1a" />
+          <rect x="22" y="34" width="16" height="20" rx="2" fill="#1a1a1a" />
+          <line
+            x1="22"
+            y1="54"
+            x2="16"
+            y2="60"
+            stroke="#1a1a1a"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <line
+            x1="38"
+            y1="54"
+            x2="44"
+            y2="60"
+            stroke="#1a1a1a"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <circle cx="24" cy="20" r="2" fill="#c8a84b" />
+          <circle cx="36" cy="20" r="2" fill="#c8a84b" />
+        </svg>
+      </a>
+      <ul>
+        <li><a href="#ramsees">Ramsees II</a></li>
+        <li><a href="#throne">Throne Room</a></li>
+        <li><a href="#book">The Book</a></li>
+        <li><a href="#posters">Posters</a></li>
+      </ul>
+      <button class="audio-toggle" id="audioToggle" aria-pressed="false" aria-label="Toggle sound" title="Play sound">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="3 9 7 9 12 4 12 20 7 15 3 15 3 9" />
+          <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+        </svg>
+      </button>
+    </nav>
+
+    <audio id="backgroundAudio" loop preload="auto" src="audio/smstudios93-5ancient-egypt-502872.mp3"></audio>
+
+    <!-- FLOATING HIEROGLYPHS -->
+    <div class="hiero-symbols" id="hieroContainer"></div>
+
+    <!-- SITE-WIDE PYRAMIDS -->
+    <div class="site-pyramids">
+      <svg
+        viewBox="0 0 1440 220"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polygon points="0,220 280,40 560,220" fill="rgba(40,28,8,0.9)" />
+        <polygon points="300,220 620,20 940,220" fill="rgba(30,20,5,0.95)" />
+        <polygon points="700,220 960,60 1220,220" fill="rgba(35,24,7,0.88)" />
+        <polygon
+          points="1100,220 1320,80 1540,220"
+          fill="rgba(40,28,8,0.85)"
+        />
+      </svg>
+    </div>
+
+    <!-- LANDING -->
+    <section id="landing">
+      <div class="hieroglyph-bg"></div>
+      <div class="sand-gradient"></div>
+      <div class="pyramids">
+        <svg
+          viewBox="0 0 1440 220"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="0,220 280,40 560,220" fill="rgba(40,28,8,0.9)" />
+          <polygon points="300,220 620,20 940,220" fill="rgba(30,20,5,0.95)" />
+          <polygon points="700,220 960,60 1220,220" fill="rgba(35,24,7,0.88)" />
+          <polygon
+            points="1100,220 1320,80 1540,220"
+            fill="rgba(40,28,8,0.85)"
+          />
+        </svg>
+      </div>
+      <div class="landing-content">
+        <p class="eyebrow">A Journey Through Time</p>
+        <h1>Encyclopedia of<span>Ancient Egypt</span></h1>
+        <p>Discover the mysteries of one of history's greatest civilisations</p>
+        <a href="#ramsees" class="explore-btn">Explore</a>
+      </div>
+    </section>
+
+    <!-- RAMSEES II -->
+    <section id="ramsees">
+      <div class="ramsees-inner">
+        <div class="ramsees-text">
+          <p class="section-tag">Pharaoh of Egypt</p>
+          <p class="meet">Meet</p>
+          <h2>Ramsees II</h2>
+          <p>
+            Born into the royal family around 1303 BCE, Ramesses II, later
+            known as Ramesses the Great, rose to become one of ancient Egypt's
+            most celebrated and longest-reigning pharaohs. Appointed as prince
+            regent and commander of the army by his father Seti I, he
+            demonstrated military brilliance from a young age before ascending
+            to the throne.
+          </p>
+          <p style="margin-top: 16px">
+            His 66-year reign was marked by unprecedented construction projects,
+            military campaigns that stretched Egypt's boundaries, and diplomatic
+            achievements that forged lasting peace with rival powers. His legacy
+            endures in the monuments he built and the stories carved in stone
+            across the Nile Valley.
+          </p>
+
+          <div class="timeline">
+            <h3>Timeline Of His Reign</h3>
+            <div class="timeline-track">
+              <div class="timeline-line"></div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">1303 BCE</span>
+                <p class="tl-event">Born into the Royal Family</p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">1290 BCE</span>
+                <p class="tl-event">
+                  Appointed prince regent and army commander
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">1279 BCE</span>
+                <p class="tl-event">
+                  Coronation at Memphis following death of Seti I
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">1274 BCE</span>
+                <p class="tl-event">The Battle of Kadesh</p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">1258 BCE</span>
+                <p class="tl-event">The Egyptian-Hittite Peace Treaty</p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">1213 BCE</span>
+                <p class="tl-event">
+                  Ramsees dies aged 90–96 after a 66-year reign
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ramsees-img-wrap">
+          <img id="ramseesImg" src="img/fRONT VIEW-01.png" alt="Ramsees II" />
+          <div class="ramsees-img-nav">
+            <a
+              href="#ramsees"
+              class="img-link prev"
+              onclick="prevRamseesImg(event)"
+              >‹ Previous</a
+            >
+            <a
+              href="#ramsees"
+              class="img-link next"
+              onclick="nextRamseesImg(event)"
+              >Next ›</a
+            >
+          </div>
+          <p class="img-hint">Use the links to switch views</p>
+        </div>
+      </div>
+
+      
+      </div>
+    </section>
+
+    <!-- THRONE ROOM -->
+    <section id="throne">
+      <div class="throne-inner">
+        <p class="section-tag">The Inner Chamber</p>
+        <h2>The Throne Room</h2>
+        <img
+          class="throne-img"
+          src="img/Throne room-01.png"
+          alt="Egyptian Throne Room"
+          onclick="openThroneModal()"
+          style="cursor: pointer;"
+        />
+      </div>
+    </section>
+
+    <!-- THE BOOK -->
+    <section id="book">
+      <div class="book-inner">
+        <div class="book-text">
+          <p class="section-tag">The Encyclopedia</p>
+          <p class="the">The</p>
+          <h2>Book</h2>
+          <p>
+            A definitive guide to Ancient Egypt, this encyclopedia brings
+            together centuries of scholarship and discovery. Explore the
+            dynasties of pharaohs who shaped a civilisation, the gods and
+            goddesses who governed their world, the monuments that still stand
+            as testament to their ingenuity, and the daily lives of the people
+            who built one of history's greatest empires.
+          </p>
+          <p style="margin-top: 16px">
+            Illustrated throughout with maps, artefacts, and reconstructions,
+            this volume is an essential companion for anyone fascinated by the
+            ancient world.
+          </p>
+          <button class="buy-btn">Buy Book</button>
+        </div>
+        <div class="book-slideshow">
+          <div class="slide active">
+            <img src="img/book angle 1.png" alt="Book Front Cover" />
+            <p class="slide-caption">Front Cover</p>
+          </div>
+          <div class="slide">
+            <img src="img/book angle 2.jpg" alt="Book Spine" />
+            <p class="slide-caption">Spine View</p>
+          </div>
+          <div class="slide">
+            <img src="img/book angle 3.jpg" alt="Book Back Cover" />
+            <p class="slide-caption">Back Cover</p>
+          </div>
+          <div class="slide">
+            <img src="img/book angle 4.jpg" alt="Book Open" />
+            <p class="slide-caption">Open View</p>
+          </div>
+          <div class="slide-controls">
+            <button class="slide-btn" onclick="prevSlide()">&#8592;</button>
+            <div class="slide-dots">
+              <div class="sdot active" onclick="goSlide(0)"></div>
+              <div class="sdot" onclick="goSlide(1)"></div>
+              <div class="sdot" onclick="goSlide(2)"></div>
+              <div class="sdot" onclick="goSlide(3)"></div>
+            </div>
+            <button class="slide-btn" onclick="nextSlide()">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTERS -->
+    <section id="posters">
+      <div class="posters-inner">
+        <p class="section-tag">Gallery</p>
+        <h2>Posters</h2>
+        <div class="triptych">
+          <div class="poster-card" onclick="openPoster(0)">
+            <img src="img/poster 1.jpg" alt="The Spell of Egypt" />
+          </div>
+          <div class="poster-card" onclick="openPoster(1)">
+            <img src="img/poster 2.jpg" alt="Egypt and Its Monuments" />
+          </div>
+          <div class="poster-card" onclick="openPoster(2)">
+            <img src="img/poster 3.jpg" alt="L'Egypte Antique" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTER DETAIL OVERLAY -->
+    <div id="poster-detail">
+      <img id="poster-detail-img" src="img/poster 1.jpg" alt="Poster" />
+      <button class="back-btn" onclick="closePoster()">
+        ← Back to Posters
+      </button>
+    </div>
+
+    <!-- THRONE DETAIL OVERLAY -->
+    <div id="throne-detail">
+      <img id="throne-detail-img" src="img/Throne room-01.png" alt="Throne Room enlarged" />
+      <button class="back-btn" onclick="closeThroneModal()">
+        ← Back to Throne Room
+      </button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
