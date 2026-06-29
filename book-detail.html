@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Views</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <main class="book-detail-page">
+      <div class="book-detail-shell">
+        <div class="book-detail-hero">
+          <div>
+            <a class="back-link" href="index.html#book">← Back to Books</a>
+            <h1 id="bookTitle">Book Views</h1>
+            <p id="bookIntro" class="book-detail-intro">
+              Explore three different views of the selected book.
+            </p>
+          </div>
+        </div>
+
+        <div class="view-grid" id="viewGrid"></div>
+      </div>
+    </main>
+
+    <script>
+      const books = {
+        egypt: {
+          title: "Encyclopedia of Ancient Egypt",
+          intro: "A richly illustrated volume featuring the front cover, spine, and back view of the book.",
+          views: [
+            {
+              title: "Front Cover",
+              image: "img/book angle 1.png",
+              description: "The striking front cover that introduces the collection."
+            },
+            {
+              title: "Spine View",
+              image: "img/book angle 2.jpg",
+              description: "A focused look at the book's spine and detailing."
+            },
+            {
+              title: "Back Cover",
+              image: "img/book angle 3.jpg",
+              description: "The reverse side with its preserved ornamental finish."
+            }
+          ]
+        },
+        pharaohs: {
+          title: "Legacies of the Pharaohs",
+          intro: "A second volume presenting the open view, profile, and detailed cover treatment.",
+          views: [
+            {
+              title: "Open View",
+              image: "img/book angle 4.jpg",
+              description: "A full open view showing the internal layout and pages."
+            },
+            {
+              title: "Profile View",
+              image: "img/book angle 1.png",
+              description: "A side profile that highlights the book's shape and form."
+            },
+            {
+              title: "Cover Detail",
+              image: "img/book angle 3.jpg",
+              description: "A close-up look at the decorative cover finish."
+            }
+          ]
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const selectedBook = books[params.get("book")] || books.egypt;
+
+      document.getElementById("bookTitle").textContent = selectedBook.title;
+      document.getElementById("bookIntro").textContent = selectedBook.intro;
+
+      const viewGrid = document.getElementById("viewGrid");
+      selectedBook.views.forEach((view) => {
+        const card = document.createElement("div");
+        card.className = "view-card";
+        card.innerHTML = `
+          <img src="${view.image}" alt="${view.title}" />
+          <div class="view-info">
+            <h3>${view.title}</h3>
+            <p>${view.description}</p>
+          </div>
+        `;
+        viewGrid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

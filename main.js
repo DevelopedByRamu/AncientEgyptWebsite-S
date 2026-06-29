@@ -32,15 +32,17 @@ const symbols = [
   "𓄂",
 ];
 const container = document.getElementById("hieroContainer");
-for (let i = 0; i < 40; i++) {
-  const el = document.createElement("div");
-  el.className = "hiero-sym";
-  el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-  el.style.left = Math.random() * 100 + "vw";
-  el.style.animationDuration = 12 + Math.random() * 20 + "s";
-  el.style.animationDelay = Math.random() * 20 + "s";
-  el.style.fontSize = 16 + Math.random() * 28 + "px";
-  container.appendChild(el);
+if (container) {
+  for (let i = 0; i < 40; i++) {
+    const el = document.createElement("div");
+    el.className = "hiero-sym";
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = 12 + Math.random() * 20 + "s";
+    el.style.animationDelay = Math.random() * 20 + "s";
+    el.style.fontSize = 16 + Math.random() * 28 + "px";
+    container.appendChild(el);
+  }
 }
 
 // ── Ramsees image cycler ──
@@ -148,31 +150,39 @@ const ramseesTriptychCards = document.querySelectorAll(
 );
 
 function openRamseesTriptychImage(src, alt) {
+  if (!ramseesTriptychOverlayImg || !ramseesTriptychOverlay) return;
   ramseesTriptychOverlayImg.src = src;
   ramseesTriptychOverlayImg.alt = alt;
   ramseesTriptychOverlay.classList.add("open");
 }
 
 function closeRamseesTriptychOverlay() {
-  ramseesTriptychOverlay.classList.remove("open");
+  if (ramseesTriptychOverlay) {
+    ramseesTriptychOverlay.classList.remove("open");
+  }
 }
 
 ramseesTriptychCards.forEach((card) => {
   card.addEventListener("click", () => {
     const img = card.querySelector("img");
-    openRamseesTriptychImage(img.src, img.alt);
+    if (img) {
+      openRamseesTriptychImage(img.src, img.alt);
+    }
   });
 });
 
-ramseesTriptychOverlay.addEventListener("click", (e) => {
-  if (e.target === ramseesTriptychOverlay) {
-    closeRamseesTriptychOverlay();
-  }
-});
+if (ramseesTriptychOverlay) {
+  ramseesTriptychOverlay.addEventListener("click", (e) => {
+    if (e.target === ramseesTriptychOverlay) {
+      closeRamseesTriptychOverlay();
+    }
+  });
+}
 
-document
-  .querySelector(".overlay-close")
-  .addEventListener("click", closeRamseesTriptychOverlay);
+const overlayClose = document.querySelector(".overlay-close");
+if (overlayClose) {
+  overlayClose.addEventListener("click", closeRamseesTriptychOverlay);
+}
 
 // Keyboard ESC to close
 document.addEventListener("keydown", (e) => {
@@ -215,8 +225,33 @@ revealSections.forEach((section) => {
   revealObserver.observe(section);
 });
 
+const themeToggle = document.getElementById("themeToggle");
 const audioToggle = document.getElementById("audioToggle");
 const backgroundAudio = document.getElementById("backgroundAudio");
+
+function applyTheme(theme) {
+  document.body.setAttribute("data-theme", theme);
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(theme === "light"));
+    themeToggle.textContent = theme === "light" ? "Dark Mode" : "Light Mode";
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "light" ? "Switch to dark mode" : "Switch to light mode",
+    );
+  }
+  localStorage.setItem("site-theme", theme);
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    applyTheme(nextTheme);
+  });
+}
+
+const savedTheme = localStorage.getItem("site-theme");
+const initialTheme = savedTheme || "dark";
+applyTheme(initialTheme);
 
 function updateAudioToggle() {
   if (!audioToggle || !backgroundAudio) return;

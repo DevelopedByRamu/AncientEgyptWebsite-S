@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encyclopedia of Ancient Egypt</title>
+  <title>Encyclopedia of ANCIENT EGYPT</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -44,15 +44,18 @@
         <li><a href="#book">The Book</a></li>
         <li><a href="#posters">Posters</a></li>
       </ul>
-      <button class="audio-toggle" id="audioToggle" aria-pressed="false" aria-label="Toggle sound" title="Play sound">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="3 9 7 9 12 4 12 20 7 15 3 15 3 9" />
-          <path d="M16.5 8.5a5 5 0 0 1 0 7" />
-        </svg>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light mode">Light Mode</button>
+        <button class="audio-toggle" id="audioToggle" aria-pressed="false" aria-label="Toggle sound" title="Play sound">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 9 7 9 12 4 12 20 7 15 3 15 3 9" />
+            <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+          </svg>
+        </button>
+      </div>
     </nav>
 
-    <audio id="backgroundAudio" loop preload="auto" src="audio/smstudios93-5ancient-egypt-502872.mp3"></audio>
+    <audio id="backgroundAudio" loop preload="auto" src="audio/house_of_the_dragon_11. The Power of Prophecy_1.mp3"></audio>
 
     <!-- FLOATING HIEROGLYPHS -->
     <div class="hiero-symbols" id="hieroContainer"></div>
@@ -76,6 +79,12 @@
 
     <!-- LANDING -->
     <section id="landing">
+      <div class="section-hiero" aria-hidden="true">
+        <span style="left: 8%; top: 18%; animation-delay: 0s;">𓂋</span>
+        <span style="left: 22%; top: 24%; animation-delay: 2s;">𓆣</span>
+        <span style="left: 72%; top: 16%; animation-delay: 4s;">𓏏</span>
+        <span style="left: 84%; top: 30%; animation-delay: 6s;">𓅓</span>
+      </div>
       <div class="hieroglyph-bg"></div>
       <div class="sand-gradient"></div>
       <div class="pyramids">
@@ -103,6 +112,12 @@
 
     <!-- RAMSEES II -->
     <section id="ramsees">
+      <div class="section-hiero" aria-hidden="true">
+        <span style="left: 10%; top: 12%; animation-delay: 1s;">𓄿</span>
+        <span style="left: 78%; top: 18%; animation-delay: 3s;">𓂋</span>
+        <span style="left: 54%; top: 70%; animation-delay: 5s;">𓆣</span>
+        <span style="left: 86%; top: 72%; animation-delay: 7s;">𓏏</span>
+      </div>
       <div class="ramsees-inner">
         <div class="ramsees-text">
           <p class="section-tag">Pharaoh of Egypt</p>
@@ -194,6 +209,12 @@
 
     <!-- THRONE ROOM -->
     <section id="throne">
+      <div class="section-hiero" aria-hidden="true">
+        <span style="left: 12%; top: 20%; animation-delay: 0.5s;">𓍯</span>
+        <span style="left: 64%; top: 14%; animation-delay: 2.5s;">𓆎</span>
+        <span style="left: 82%; top: 64%; animation-delay: 4.5s;">𓂋</span>
+        <span style="left: 30%; top: 76%; animation-delay: 6s;">𓏏</span>
+      </div>
       <div class="throne-inner">
         <p class="section-tag">The Inner Chamber</p>
         <h2>The Throne Room</h2>
@@ -209,59 +230,49 @@
 
     <!-- THE BOOK -->
     <section id="book">
+      <div class="section-hiero" aria-hidden="true">
+        <span style="left: 8%; top: 26%; animation-delay: 1.2s;">𓃭</span>
+        <span style="left: 70%; top: 20%; animation-delay: 3.2s;">𓂧</span>
+        <span style="left: 56%; top: 74%; animation-delay: 5.2s;">𓇋</span>
+        <span style="left: 84%; top: 78%; animation-delay: 7.2s;">𓏏</span>
+      </div>
       <div class="book-inner">
         <div class="book-text">
           <p class="section-tag">The Encyclopedia</p>
           <p class="the">The</p>
-          <h2>Book</h2>
+          <h2>Books</h2>
           <p>
-            A definitive guide to Ancient Egypt, this encyclopedia brings
-            together centuries of scholarship and discovery. Explore the
-            dynasties of pharaohs who shaped a civilisation, the gods and
-            goddesses who governed their world, the monuments that still stand
-            as testament to their ingenuity, and the daily lives of the people
-            who built one of history's greatest empires.
+            Discover two curated volumes below. Click each one to open a dedicated
+            view page that highlights three distinct angles of the book.
           </p>
-          <p style="margin-top: 16px">
-            Illustrated throughout with maps, artefacts, and reconstructions,
-            this volume is an essential companion for anyone fascinated by the
-            ancient world.
-          </p>
-          <button class="buy-btn">Buy Book</button>
         </div>
-        <div class="book-slideshow">
-          <div class="slide active">
-            <img src="img/book angle 1.png" alt="Book Front Cover" />
-            <p class="slide-caption">Front Cover</p>
-          </div>
-          <div class="slide">
-            <img src="img/book angle 2.jpg" alt="Book Spine" />
-            <p class="slide-caption">Spine View</p>
-          </div>
-          <div class="slide">
-            <img src="img/book angle 3.jpg" alt="Book Back Cover" />
-            <p class="slide-caption">Back Cover</p>
-          </div>
-          <div class="slide">
-            <img src="img/book angle 4.jpg" alt="Book Open" />
-            <p class="slide-caption">Open View</p>
-          </div>
-          <div class="slide-controls">
-            <button class="slide-btn" onclick="prevSlide()">&#8592;</button>
-            <div class="slide-dots">
-              <div class="sdot active" onclick="goSlide(0)"></div>
-              <div class="sdot" onclick="goSlide(1)"></div>
-              <div class="sdot" onclick="goSlide(2)"></div>
-              <div class="sdot" onclick="goSlide(3)"></div>
+        <div class="book-gallery">
+          <a class="book-card" href="book-detail.html?book=egypt">
+            <img src="img/book cover 1.jpeg" alt="Encyclopedia of Ancient Egypt" />
+            <div class="book-card-content">
+              <h3>Encyclopedia of Ancient Egypt</h3>
+              <p>Front cover, spine, and back view</p>
             </div>
-            <button class="slide-btn" onclick="nextSlide()">&#8594;</button>
-          </div>
+          </a>
+          <a class="book-card" href="book-detail.html?book=pharaohs">
+            <img src="img/book cover 2.jpeg" alt="Legacies of the Pharaohs" />
+            <div class="book-card-content">
+              <h3>Legacies of the Pharaohs</h3>
+              <p>Open view, profile, and cover detail</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- POSTERS -->
     <section id="posters">
+      <div class="section-hiero" aria-hidden="true">
+        <span style="left: 10%; top: 18%; animation-delay: 0.8s;">𓈖</span>
+        <span style="left: 74%; top: 16%; animation-delay: 2.8s;">𓎛</span>
+        <span style="left: 40%; top: 72%; animation-delay: 4.8s;">𓆣</span>
+        <span style="left: 84%; top: 70%; animation-delay: 6.8s;">𓂋</span>
+      </div>
       <div class="posters-inner">
         <p class="section-tag">Gallery</p>
         <h2>Posters</h2>
