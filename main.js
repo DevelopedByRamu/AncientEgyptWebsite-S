@@ -45,11 +45,19 @@ if (container) {
   }
 }
 
+const cursor = document.querySelector(".cursor");
+if (cursor) {
+  document.addEventListener("mousemove", (event) => {
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+  });
+}
+
 // ── Ramsees image cycler ──
 const ramseesImages = [
-  "img/fRONT VIEW-01.png",
-  "img/SIDE ISH VIEW-01.png",
-  "img/sIDE VIEW-01.png",
+  "img/pharaoh o sedza phanda.png",
+  "img/pharaoh o sedza thundo.png",
+  "img/pharaoh side view.png",
 ];
 let ramseesIdx = 0;
 function updateRamseesImg() {
@@ -102,7 +110,11 @@ function prevSlide() {
 }
 
 // ── Poster detail ──
-const posterSrcs = ["img/Poster 1.jpg", "img/Poster 2.jpg", "img/Poster 3.jpg"];
+const posterSrcs = [
+  "img/poster 3.jpeg",
+  "img/poster 2.jpeg",
+  "img/poster 1.jpeg",
+];
 function openPoster(i) {
   document.getElementById("poster-detail-img").src = posterSrcs[i];
   document.getElementById("poster-detail").classList.add("open");
@@ -244,7 +256,8 @@ function applyTheme(theme) {
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    const nextTheme = document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    const nextTheme =
+      document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
     applyTheme(nextTheme);
   });
 }
