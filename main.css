@@ -32,18 +32,59 @@
 
 body[data-theme="light"] {
   --page-bg: linear-gradient(135deg, #fce6a3 0%, #f4bf3a 45%, #c47b14 100%);
-  --nav-bg: #ff8800;
+  --nav-bg: #e44444;
   --section-bg: linear-gradient(
     135deg,
-    rgba(255, 240, 184, 0.98) 0%,
-    rgba(245, 185, 38, 0.94) 55%,
-    rgba(173, 99, 18, 0.97) 100%
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.94) 55%,
+    rgba(255, 255, 255, 0.97) 100%
   );
   --white: #3f2208;
   --text-light: rgba(63, 34, 8, 0.92);
   --surface: rgba(255, 255, 255, 0.48);
   --border-soft: rgba(120, 70, 10, 0.32);
   --hiero-color: rgba(140, 88, 18, 0.16);
+}
+.explore-btn[data-theme="light"] {
+  display: inline-block;
+  margin-top: 48px;
+  padding: 16px 52px;
+  background: #e44444;
+  color: #fff;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.2s,
+    box-shadow 0.3s;
+  box-shadow: 0 4px 24px #e44444;
+  opacity: 0;
+  animation: fadeUp 1s 1.2s forwards;
+}
+
+body[data-theme="light"] .explore-btn {
+  background: #e44444;
+  box-shadow: 0 4px 24px #e44444;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 99999;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  display: block;
 }
 
 html {
@@ -55,9 +96,15 @@ body {
   background: var(--page-bg);
   color: var(--white);
   overflow-x: hidden;
+  cursor: none;
   transition:
     background 0.35s ease,
     color 0.35s ease;
+}
+
+body *,
+body *:hover {
+  cursor: none !important;
 }
 
 body[data-theme="light"] p,
@@ -267,14 +314,8 @@ section.reveal.visible {
 }
 
 body[data-theme="light"] #landing {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 236, 176, 0.78),
-      rgba(184, 102, 12, 0.78)
-    ),
-    url("Img/pyramid.png") center/cover no-repeat;
-  background-color: #b97816;
+  background: url("Img/Red\ moon\ pyramid.png") center/cover no-repeat;
+  background-color: #1a1209;
 }
 
 .hieroglyph-bg {
