@@ -18,38 +18,39 @@
   --blue-light: #6ea0ff;
   --dark: #1a1a1a;
   --text-light: rgba(255, 255, 255, 0.92);
-  --page-bg: linear-gradient(135deg, #d7d6da 0%, #bcbdd3 45%, #7d8ab4 100%);
+  --page-bg: linear-gradient(135deg, #1f1109 0%, #3c2414 45%, #62422a 100%);
   --nav-bg: rgba(31, 79, 161, 0.94);
   --section-bg: linear-gradient(
     140deg,
-    rgba(26, 18, 9, 0.96),
-    rgba(58, 42, 16, 0.96)
+    rgba(72, 49, 28, 0.96) 0%,
+    rgba(58, 39, 25, 0.96) 55%,
+    rgba(42, 28, 17, 0.96) 100%
   );
   --surface: rgba(255, 255, 255, 0.05);
-  --border-soft: rgba(243, 193, 92, 0.24);
+  --border-soft: rgba(243, 193, 92, 0.18);
   --hiero-color: rgba(200, 168, 75, 0.15);
 }
 
 body[data-theme="light"] {
-  --page-bg: linear-gradient(135deg, #fce6a3 0%, #f4bf3a 45%, #c47b14 100%);
+  --page-bg: linear-gradient(135deg, #c47061 0%, #b12f29 45%, #8f1b1b 100%);
   --nav-bg: #e44444;
   --section-bg: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.94) 55%,
-    rgba(255, 255, 255, 0.97) 100%
+    rgba(180, 65, 60, 0.96) 0%,
+    rgba(155, 30, 30, 0.95) 55%,
+    rgba(120, 20, 20, 0.95) 100%
   );
-  --white: #3f2208;
-  --text-light: rgba(63, 34, 8, 0.92);
+  --white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.92);
   --surface: rgba(255, 255, 255, 0.48);
-  --border-soft: rgba(120, 70, 10, 0.32);
-  --hiero-color: rgba(140, 88, 18, 0.16);
+  --border-soft: rgba(200, 70, 70, 0.32);
+  --hiero-color: rgba(190, 80, 70, 0.16);
 }
-.explore-btn[data-theme="light"] {
+.explore-btn {
   display: inline-block;
   margin-top: 48px;
   padding: 16px 52px;
-  background: #e44444;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
   font-family: "Cinzel", serif;
   font-weight: 600;
@@ -64,7 +65,7 @@ body[data-theme="light"] {
     background 0.3s,
     transform 0.2s,
     box-shadow 0.3s;
-  box-shadow: 0 4px 24px #e44444;
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.08);
   opacity: 0;
   animation: fadeUp 1s 1.2s forwards;
 }
@@ -112,8 +113,8 @@ body[data-theme="light"] .section-tag,
 body[data-theme="light"] .book-text p,
 body[data-theme="light"] .book-card p,
 body[data-theme="light"] .view-card p {
-  color: rgba(63, 34, 8, 0.88);
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 body
@@ -377,6 +378,10 @@ body[data-theme="light"] #landing {
     "Segoe UI Symbol", "Noto Sans Egyptian Hieroglyphs", "Arial Unicode MS",
     sans-serif;
   text-shadow: 0 0 10px rgba(243, 193, 92, 0.12);
+}
+body[data-theme="light"] .hiero-sym {
+  color: rgba(167, 133, 60, 0.95);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
 }
 @keyframes floatSym {
   0% {
@@ -662,6 +667,7 @@ body[data-theme="light"] #landing {
   flex: 0 0 400px;
   position: sticky;
   top: 100px;
+  border: none;
 }
 .ramsees-img-nav {
   display: flex;
@@ -687,11 +693,14 @@ body[data-theme="light"] #landing {
 }
 .ramsees-img-wrap img {
   width: 100%;
-  height: 560px;
-  object-fit: cover;
+  height: 420px;
+  object-fit: contain;
+  background: transparent;
   border-radius: 6px;
-  box-shadow: -12px 12px 48px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
   transition: opacity 0.5s ease;
+  display: block;
+  padding: 8px;
 }
 .img-hint {
   text-align: center;
@@ -772,7 +781,8 @@ body[data-theme="light"] #landing {
   gap: 24px;
 }
 .book-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
@@ -784,6 +794,7 @@ body[data-theme="light"] #landing {
     transform 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease;
+  min-height: 520px;
 }
 .book-card:hover {
   transform: translateY(-4px);
@@ -792,12 +803,15 @@ body[data-theme="light"] #landing {
 }
 .book-card img {
   width: 100%;
-  height: 360px;
-  object-fit: cover;
+  height: 430px;
+  object-fit: contain;
   display: block;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 12px;
 }
 .book-card-content {
   padding: 20px 22px 24px;
+  flex: 1;
 }
 .book-card h3 {
   font-size: 24px;
@@ -933,14 +947,11 @@ body[data-theme="light"] #landing {
   cursor: pointer;
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  box-shadow: none;
+  transition: transform 0.3s;
 }
 .poster-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
 }
 .poster-card img {
   width: 100%;

@@ -23,50 +23,47 @@
       </div>
     </main>
 
+    <img class="cursor" src="Img/cursor img.png" />
+    <script src="main.js"></script>
     <script>
       const books = {
         egypt: {
           title: "Encyclopedia of Ancient Egypt",
-          intro: "A richly illustrated volume featuring the front cover, spine, and back view of the book.",
+          intro:
+            "A richly illustrated volume featuring the front cover, spine, and back view of the book.",
           views: [
             {
               title: "Front Cover",
-              image: "img/book angle 1.png",
-              description: "The striking front cover that introduces the collection."
+              image: "img/book 2 cover front new.jpeg",
+              description:
+                "The striking front cover that introduces the collection.",
             },
             {
               title: "Spine View",
-              image: "img/book angle 2.jpg",
-              description: "A focused look at the book's spine and detailing."
+              image: "img/book 2 cover back new.jpeg",
+              description: "A focused look at the book's spine and detailing.",
             },
-            {
-              title: "Back Cover",
-              image: "img/book angle 3.jpg",
-              description: "The reverse side with its preserved ornamental finish."
-            }
-          ]
+          ],
         },
         pharaohs: {
           title: "Legacies of the Pharaohs",
-          intro: "A second volume presenting the open view, profile, and detailed cover treatment.",
+          intro:
+            "A second volume presenting the open view, profile, and detailed cover treatment.",
           views: [
             {
               title: "Open View",
-              image: "img/book angle 4.jpg",
-              description: "A full open view showing the internal layout and pages."
+              image: "img/book 1 cover front new.jpeg",
+              description:
+                "A full open view showing the internal layout and pages.",
             },
             {
               title: "Profile View",
-              image: "img/book angle 1.png",
-              description: "A side profile that highlights the book's shape and form."
+              image: "img/book 1 cover back new.jpeg",
+              description:
+                "A side profile that highlights the book's shape and form.",
             },
-            {
-              title: "Cover Detail",
-              image: "img/book angle 3.jpg",
-              description: "A close-up look at the decorative cover finish."
-            }
-          ]
-        }
+          ],
+        },
       };
 
       const params = new URLSearchParams(window.location.search);
